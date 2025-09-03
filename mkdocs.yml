@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Mike Coats
+# SPDX-License-Identifier: Unlicense
+site_name: CircuitPython AT42QT2120 Library
+nav:
+  - Introduction: index.md
+theme: readthedocs
