@@ -4,6 +4,9 @@
 
 ### [mpr121_simpletest.py](https://github.com/adafruit/Adafruit_CircuitPython_MPR121/blob/main/examples/mpr121_simpletest.py)
 
+- Accesses channels via array subscripts.
+- Accesses boolean from channels' values.
+
 ```py
 #...
     if mpr121[i].value:
@@ -12,6 +15,8 @@
 
 ### [mpr121_piano.py](https://github.com/adafruit/Adafruit_CircuitPython_MPR121/blob/main/examples/mpr121_piano.py)
 
+- Accesses booleans from touched_pins tuple.
+
 ```py
 #...
     touched = mpr121.touched_pins
@@ -19,6 +24,9 @@
 ```
 
 ### [mpr121_pi_keyboard.py](https://github.com/adafruit/Adafruit_CircuitPython_MPR121/blob/main/examples/mpr121_pi_keyboard.py)
+
+- Accesses channels via array subscripts.
+- Accesses boolean from channels' values.
 
 ```py
 #...
