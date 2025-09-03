@@ -4,3 +4,6 @@ site_name: CircuitPython AT42QT2120 Library
 nav:
   - Introduction: index.md
 theme: readthedocs
+repo_url: https://github.com/MikeCoats/CircuitPython_AT42QT2120/
+repo_name: GitHub
+docs_dir: mkdocs
