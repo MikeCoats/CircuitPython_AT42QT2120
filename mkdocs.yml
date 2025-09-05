@@ -4,6 +4,7 @@ site_name: CircuitPython AT42QT2120 Library
 nav:
   - Introduction: index.md
   - Compatibility: compatibility.md
+  - Reference: reference.md
 theme: readthedocs
 extra_css:
 - extra.css
