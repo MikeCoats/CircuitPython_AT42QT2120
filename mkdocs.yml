@@ -5,6 +5,14 @@ nav:
   - Introduction: index.md
   - Compatibility: compatibility.md
 theme: readthedocs
+extra_css:
+- extra.css
 repo_url: https://github.com/MikeCoats/CircuitPython_AT42QT2120/
 repo_name: GitHub
 docs_dir: mkdocs
+plugins:
+- mkdocstrings:
+    handlers:
+      python:
+        options:
+          show_root_heading: true

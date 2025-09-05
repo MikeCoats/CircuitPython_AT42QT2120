@@ -1,4 +1,4 @@
-# MPR121 Compatible Uses Audit
+# MPR121 Compatible-use Audit
 
 ## Adafruit Examples
 

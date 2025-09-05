@@ -8,7 +8,7 @@ A CircuitPython module for the AT42QT2120 capacitive touch sensor IC, (mostly) c
 
 This library's interface is designed after Adafruit's MPR121 module.
 The ICs diverge in functionality, so we only include functions available on both chips.
-To determine what functionality is needed, I surveyed several consumers of the MPR121 library.
+To determine which functionality is required, I surveyed several consumers of the MPR121 library.
 This includes three examples from Adafruit, and many of the projects "dependent" on their library on GitHub.
 
 A full list of all the projects I surveyed and their usage of the MPR121 library can be found in [the Compatibility Audit][audit].

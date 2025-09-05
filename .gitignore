@@ -2,5 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 .venv/
+**/__pycache__/
+*.egg-info/
 
 .idea/
