@@ -14,6 +14,34 @@ This includes three examples from Adafruit, and many of the projects "dependent"
 A full list of all the projects I surveyed and their usage of the MPR121 library can be found in [the Compatibility Audit][audit].
 This audit should let us cover enough of the design to use an AT42QT2120 as a drop-in replacement for most users of the MPR121.
 
+## Installing from PyPI
+
+On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally [from PyPI][pypi-at42qt2120].
+To install in a virtual environment in your current project:
+
+```shell
+mkdir project-name && cd project-name
+python3 -m venv .venv
+source .venv/bin/activate
+pip3 install circuitpython-at42qt2120
+```
+
+## Usage Example
+
+```python
+import busio
+import board
+from adafruit_bus_device import i2c_device
+
+from at42qt2120 import AT42QT2120
+
+i2c_bus = busio.I2C(board.SCL, board.SDA, frequency=100000)
+at = AT42QT2120(i2c_bus)
+
+print(at.touched_pins)
+print([at[i].raw_value for i in range(12)])
+```
+
 ## Documentation
 
 API documentation for this library can be found on [Read the Docs][readthedocs].
@@ -27,5 +55,6 @@ before contributing to help this project stay welcoming.
 [github-action]: https://github.com/MikeCoats/CircuitPython_AT42QT2120/actions
 [ruff]: https://github.com/astral-sh/ruff
 [audit]: mkdocs/compatibility.md
+[pypi-at42qt2120]: https://pypi.org/project/circuitpython-at42qt2120/
 [readthedocs]: https://at42qt2120.readthedocs.io/
 [conduct]: ./CODE_OF_CONDUCT.md

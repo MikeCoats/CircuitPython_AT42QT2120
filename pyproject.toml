@@ -11,7 +11,7 @@ requires = [
 [project]
 name = "circuitpython-at42qt2120"
 description = "A CircuitPython module for the AT42QT2120 capacitive touch sensor IC, (mostly) compatible with Adafruit's MPR121 library."
-version = "1.0.0.alpha.3"
+version = "1.0.0"
 readme = "README.md"
 authors = [
     {name = "Mike Coats", email = "i.am@mikecoats.com"}
