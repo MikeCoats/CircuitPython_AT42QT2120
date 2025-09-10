@@ -7,7 +7,7 @@ import busio
 from adafruit_bus_device import i2c_device
 from micropython import const
 
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 __repo__ = "https://github.com/MikeCoats/CircuitPython_at42qt2120.git"
 
 AT42QT2120_I2CADDR_DEFAULT = const(0x1C)
