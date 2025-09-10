@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: Copyright (c) 2025 Mike Coats
 # SPDX-License-Identifier: MIT
 
+import time
+
 import busio
 from adafruit_bus_device import i2c_device
 from micropython import const
@@ -278,3 +280,10 @@ class AT42QT2120:
         For now, this is really just about undoing changes to thresholds.
         """
         self.write_register_byte(AT42QT2120_RESET, 1)
+
+        # From the datasheet:
+        # "This soft reset triggers the internal watchdog timer on a 125 ms
+        # interval. After 125 ms the device executes a full reset. The device
+        # NACKs any attempts to communicate with it for approximately 200 ms
+        # after the soft reset command."
+        time.sleep(0.125 + 0.200)
