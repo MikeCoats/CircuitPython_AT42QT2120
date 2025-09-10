@@ -11,6 +11,7 @@ __repo__ = "https://github.com/MikeCoats/CircuitPython_at42qt2120.git"
 AT42QT2120_I2CADDR_DEFAULT = const(0x1C)
 AT42QT2120_KEY_STATUS = const(3)  # -> const(4)
 AT42QT2120_KEY_SIGNAL_0 = const(52)  # -> const(75)
+AT42QT2120_DETECT_THRESHOLD_0 = const(16)  # -> const(27)
 
 
 def two_byte_int(high: int, low: int) -> int:
@@ -138,6 +139,30 @@ class AT42QT2120Channel:
         high = self._at42qt2120.read_register_byte(AT42QT2120_KEY_SIGNAL_0 + self._channel * 2 + 1)
         low = self._at42qt2120.read_register_byte(AT42QT2120_KEY_SIGNAL_0 + self._channel * 2)
         return two_byte_int(high, low)
+
+    @property
+    def threshold(self) -> int:
+        """The threshold value for the specified channel.
+
+        Returns:
+            The threshold value as an integer.
+        """
+        return self._at42qt2120.read_register_byte(AT42QT2120_DETECT_THRESHOLD_0 + self._channel)
+
+    @threshold.setter
+    def threshold(self, value: int) -> None:
+        """Sets the threshold value for the specified channel.
+
+        Args:
+            value: The 8-bit threshold value to set.
+
+        Raises:
+            ValueError: If the threshold value is not an integer between 0 and 255.
+        """
+        if value < 0 or value > 255:
+            raise ValueError("Threshold must be an integer between 0 and 255.")
+
+        self._at42qt2120.write_register_byte(AT42QT2120_DETECT_THRESHOLD_0 + self._channel, value)
 
 
 class AT42QT2120:
