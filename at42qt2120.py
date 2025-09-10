@@ -172,6 +172,9 @@ class AT42QT2120:
         Args:
             key: The index of the channel to retrieve.
 
+        Raises:
+            IndexError: If the specified key is out of range.
+
         Returns:
             The channel corresponding to the specified key.
         """
@@ -236,12 +239,12 @@ class AT42QT2120:
             pin: The pin to check.
 
         Raises:
-            ValueError: If ``pin`` is out of range.
+            IndexError: If ``pin`` is out of range.
 
         Returns:
             True if ``pin`` is being touched; otherwise False.
         """
         if pin < 0 or pin > 11:
-            raise ValueError("Pin must be a value 0-11.")
+            raise IndexError("Pin must be a value 0-11.")
 
         return bit_on(self.touched(), pin)
