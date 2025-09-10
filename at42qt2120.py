@@ -11,8 +11,8 @@ __repo__ = "https://github.com/MikeCoats/CircuitPython_at42qt2120.git"
 AT42QT2120_I2CADDR_DEFAULT = const(0x1C)
 AT42QT2120_KEY_STATUS = const(3)  # -> const(4)
 AT42QT2120_RESET = const(7)
-AT42QT2120_KEY_SIGNAL_0 = const(52)  # -> const(75)
 AT42QT2120_DETECT_THRESHOLD_0 = const(16)  # -> const(27)
+AT42QT2120_KEY_SIGNAL_0 = const(52)  # -> const(75)
 
 
 def two_byte_int(high: int, low: int) -> int:
@@ -273,8 +273,8 @@ class AT42QT2120:
         return bit_on(self.touched(), pin)
 
     def reset(self) -> None:
-        """Reset the IC to its default state.
+        """Reset the AT42QT2120 to its default state.
 
-        For now, this is really just about undoing changed to thresholds.
+        For now, this is really just about undoing changes to thresholds.
         """
         self.write_register_byte(AT42QT2120_RESET, 1)
